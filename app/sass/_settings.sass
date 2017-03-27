@@ -1,0 +1,206 @@
+$output-bourbon-deprecation-warnings: false !default
+@import ../../bourbon/bourbon
+@import vars
+
+*::-webkit-input-placeholder
+  color: rgba($white, .4)
+  opacity: 1
+
+*:-moz-placeholder
+  color: rgba($white, .4)
+  opacity: 1
+
+*::-moz-placeholder
+  color: rgba($white, .4)
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: rgba($white, .4)
+  opacity: 1
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder
+  color: transparent !important
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder
+  color: transparent !important
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder
+  color: transparent !important
+
+body
+  margin: 0
+  padding: 0
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.4
+  color: $color
+  font-family: $default-font
+  overflow-x: hidden
+
+section
+  padding: 60px 0 80px
+  h2
+    margin-top: 0
+    margin-bottom: 60px
+
+hr
+  margin: 0
+  border-top: 1px solid lighten($color, 50% )
+
+.responsive-img
+  display: block
+  max-width: 100%
+  height: auto
+
+h1, h2, h3, h4, h5, h6
+  font-family: "OpenSansSemiBold", sans-serif
+  font-weight: 500
+
+h1
+  font-family: "OpenSansLight", sans-serif
+  font-size: em(48px)
+  line-height: 1.2
+
+
+h2
+  font-family: "OpenSansLight", sans-serif
+  font-size: em(36px)
+
+h3, h4
+  font-family: "OpenSansSemiBold", sans-serif
+  text-transform: uppercase
+
+h3
+  font-size: em(18px)
+
+h4
+  font-size: em(16px)
+
+a
+  text-decoration: underline
+  color: $accent
+  outline: none !important
+  &:hover
+    text-decoration: none
+
+b, strong
+  font-family: "OpenSansSemiBold", sans-serif
+  font-weight: normal
+
+.fa
+  color: lighten($accent, 15%)
+
+.button
+  display: inline-block
+  border: none
+  background-color: $accent
+  text-align: center
+  color: #fff
+  font-size: em(14px)
+  text-decoration: none
+  letter-spacing: 2px
+  text-transform: uppercase
+  padding: 13px 34px
+  border-radius: 3px
+  +mt(0.15s)
+  &:hover, &:focus
+    color: #fff
+    text-decoration: none
+  &:hover
+    background-color: lighten($accent, 10%)
+  &:active
+    background-color: darken($accent, 10%)
+    transform: translateY(2px)
+
+.button-accent
+  background-color: transparent
+  border: 1px solid $accent
+  box-shadow: 0 4px 0 darken($accent, 6%)
+  color: $accent
+  font-family: "OpenSansSemiBold", sans-serif
+  &:hover
+    background-color: $accent
+  &:active, &:focus
+    background-color: darken($accent, 6%)
+
+.button-small
+  padding: 9px 28px
+  font-size: em(13px)
+  background-color: $accent
+  &:hover
+    background-color: lighten($accent, 8%)
+  &:active, &:focus
+    background-color: darken($accent, 6%)
+
+.button-gray
+  background-color: #e8e8e8
+  color: #666
+
+//Размытие при всплывающем окне
+*
+ transition: filter .25s ease
+.mfp-wrap ~ *
+  filter: blur(5px)
+
+//Fade-zoom animation for first dialog
+.my-mfp-zoom-in
+  .form-callback
+    opacity: 0
+    transform: scale(0.8)
+
+  &.mfp-ready .form-callback
+    opacity: 1
+    transform: scale(1)
+
+  &.mfp-removing .portfolio-popup,
+  &.mfp-removing .form-callback
+    transform: scale(0.8)
+    opacity: 0
+
+  &.mfp-bg
+    opacity: 0
+    transition: opacity 0.3s ease-out
+
+  &.mfp-ready.mfp-bg
+    opacity: 0.8
+
+  &.mfp-removing.mfp-bg
+    opacity: 0
+
+//Попап-форма обратной связи (кастомизация формы, которая внизу)
+.form-callback
+  position: relative
+  overflow: hidden
+  +mt(.3s)
+  max-width: 320px
+  margin: auto
+  box-shadow: rgba(0, 0, 0, .3) 0 0 20px
+  .mfp-close
+    color: #fff
+    opacity: .3
+    +mt(.25s)
+    &:hover
+      opacity: .6
+  .contact-form-head
+    h4
+      color: #fff
+
+.success
+  text-align: center
+  color: $color
+  background-color: transparent
+  position: relative
+  z-index: 1
+  left: 0
+  display: none
+  width: 100%
+  height: 100%
+  h4
+    margin-bottom: 10px
+  @include mt(.5s)
+  &.active
+    display: block

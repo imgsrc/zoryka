@@ -1,0 +1,163 @@
+$output-bourbon-deprecation-warnings: false !default
+@import ../../bourbon/bourbon
+@import libs
+@import vars
+@import settings
+
+.main-head
+  color: $white
+  position: relative
+  min-height: 90vh
+  background: $color url("../img/bg.jpg") no-repeat center top
+  background-size: cover
+  .top-logo
+    img
+      width: 150px
+  .top-line
+    padding: 20px 0
+    h3
+      margin-top: 0
+    .top-phone
+      text-align: right
+      p
+        margin-top: 0
+        font-family: "Exo2Bold", serif
+        font-size: 20px
+      .button
+        padding: 7px 20px
+  .header-content
+    padding-top: 5%
+    h1
+      margin-bottom: 50px
+    p
+      line-height: 1.6
+    .home-list
+      margin-top: 20px
+      float: left
+
+
+.s-about
+  &-item
+    img
+      width: 150px
+      margin-bottom: 20px
+
+.s-features
+  color: $white
+  img
+    width: 150px
+    margin-bottom: 20px
+
+.s-works
+  .col-md-3
+    padding: 5px 5px
+  .slide
+    position: relative
+    overflow: hidden
+    display: block
+    a
+      display: block
+    &:hover
+      .slide-content
+        opacity: 1
+        transform: scale(.95)
+    img
+      +mt(.5s)
+    &-content
+      position: absolute
+      color: darken($color, 10%)
+      padding-top: 10%
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      opacity: 0
+      background-color: rgba($white, .65)
+      text-align: center
+      +mt(.5s)
+      transform: scale(1.1)
+      .fa
+        color: darken($color, 10%)
+        font-size: 40px
+        padding: 20px 20px 5px
+  h3
+    text-transform: none
+    font-size: em(20px)
+
+.slide-popup
+  position: relative
+  background-color: #fff
+  max-width: 900px
+  margin: auto
+  text-align: center
+  display: block
+  +mt(.25s)
+  .col-sm-12
+    padding: 0
+
+
+.s-contacts
+  background-color: lighten($color, 20%)
+  color: $white
+  padding-top: 60px
+
+.form
+  display: block
+  padding: 20px 30px
+  border: 1px solid rgba($accent, 20%)
+  border-radius: 8px
+  margin-bottom: 50px
+  &-head
+    h3
+      margin: 5px 0 15px
+    p
+      margin-bottom: 25px
+  label
+    display: block
+    span
+      display: block
+      color: rgba($white, .7)
+      margin-bottom: 5px
+    input, textarea
+      display: block
+      width: 100%
+      outline: none
+      background-color: transparent
+      color: $white
+      border: 1px solid rgba($accent, 20%)
+      border-radius: 5px
+      margin-bottom: 20px
+      padding: 10px 16px
+  .button
+    margin-top: 20px
+
+.contacts-text
+  h3
+    margin: 20px 0 20px
+    text-transform: none
+  p
+    font-size: em(15px)
+    margin-bottom: 15px
+  .fa
+    margin-right: 0
+    width: 15px
+    font-size: 20px
+  a
+    text-decoration: none
+    .img-svg
+      margin-top: 20px
+      margin-right: 20px
+    &:hover, &:focus
+      color: rgba($white, .7) !important
+      .img-svg
+        path
+          fill: $accent !important
+
+.form.form-callback
+  background-color: rgba($white, .1)
+  h4
+    margin-bottom: 30px
+  input
+    margin-bottom: 30px
+  .button
+    margin-top: 10px
